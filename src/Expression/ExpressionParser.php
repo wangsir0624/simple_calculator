@@ -9,7 +9,7 @@ class ExpressionParser {
      * @var array
      */
     protected static $operators = [
-      '+', '-', '*', '/'
+      '+', '-', '*', '/', '%', '^'
     ];
 
     /**
@@ -17,8 +17,10 @@ class ExpressionParser {
      * @var array
      */
     protected static $operatorPriority = [
+        '^' => 2,
         '*' => 1,
         '/' => 1,
+        '%' => 1,
         '+' => 0,
         '-' => 0
     ];
@@ -118,6 +120,12 @@ class ExpressionParser {
                 break;
             case '/':
                 $expression = new DivisionExpression;
+                break;
+            case '%':
+                $expression = new ModExpression;
+                break;
+            case '^':
+                $expression = new PowerExpression;
                 break;
             default:
                 break;
