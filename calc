@@ -1,0 +1,5 @@
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+$calculator = new \SimpleCalculator\Calculator;
+echo $calculator->calc($_SERVER['argv'][1]);

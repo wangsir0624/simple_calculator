@@ -1,0 +1,15 @@
+{
+    "require-dev": {
+        "phpunit/dbunit": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SimpleCalculator\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SimpleCalculator\\Test\\": "tests"
+        }
+    }
+}
